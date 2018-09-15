@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Joy.UnityExtensions;
 using UnityEngine;
 
 namespace Joy.Core
@@ -90,13 +89,20 @@ namespace Joy.Core
             {
                 var group = filterAndGroup.Value;
                 group.UnregisterEntity(entity);
-
             }
         }
 
         public static IReadOnlyCollection<Entity> Query(Filter fooFilter)
         {
             return FiltersAndGroups[fooFilter].Members;
+        }
+
+
+
+        public static class ___DEBUG___
+        {
+            public static IReadOnlyDictionary<Filter, Group> AllGroups =>
+                new Dictionary<Filter, Group>(FiltersAndGroups);
         }
     }
 }
