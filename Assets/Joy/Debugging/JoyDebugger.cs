@@ -8,11 +8,28 @@ namespace Joy.Debugging
 {
     public class JoyDebugger : MonoBehaviour
     {
-        public List<FilterGroupInspector> Entities = new List<FilterGroupInspector>();
+        [Tooltip("If true, keeps updating debug info every frame. Otherwise only updates one time at the start.")]
+        public bool UpdateDebugInfoEachFrame = false;
+
+        [Space]
+        public List<FilterGroupInspector> FilterGroups = new List<FilterGroupInspector>();
 
         private void Start()
         {
-            Entities = Manager.___DEBUG___.AllGroups.Select(fg => new FilterGroupInspector(fg)).ToList();
+            UpdateEntitiesList();
+        }
+
+        private void Update()
+        {
+            if (UpdateDebugInfoEachFrame)
+            {
+                UpdateEntitiesList();
+            }
+        }
+
+        private void UpdateEntitiesList()
+        {
+            FilterGroups = Manager.___DEBUG___.AllGroups.Select(fg => new FilterGroupInspector(fg)).ToList();
         }
     }
 
