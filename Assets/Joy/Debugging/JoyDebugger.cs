@@ -55,9 +55,9 @@ namespace Joy.Debugging
 
         public FilterInspector(Filter filter)
         {
-            AllOf = filter.___DEBUG___.All.Select(t => new TypeInspector(t)).ToList();
-            AnyOfs = filter.___DEBUG___.Any.Select(a => new AnyOfInspector(a)).ToList();
-            NoneOf = filter.___DEBUG___.None.Select(t => new TypeInspector(t)).ToList();
+            AllOf = filter.___DEBUG___.AllOf.Select(t => new TypeInspector(t)).ToList();
+            AnyOfs = filter.___DEBUG___.AnyOfs.Select(a => new AnyOfInspector(a)).ToList();
+            NoneOf = filter.___DEBUG___.NoneOf.Select(t => new TypeInspector(t)).ToList();
         }
     }
 

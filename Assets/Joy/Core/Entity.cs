@@ -12,8 +12,8 @@ namespace Joy.Core
         // Unique Entity ID assignment
         //
 
-        private static int _uniqueEntityIdNext = 0;
-        public readonly int UniqueEntityId = _uniqueEntityIdNext++;
+        private static int _uidHolder = 0;
+        private readonly int _uid = _uidHolder++;
 
         //
         // Equality overrides and IEquatable<Entity> implementation
@@ -22,7 +22,7 @@ namespace Joy.Core
 
         public bool Equals(Entity other)
         {
-            return other != null && this.UniqueEntityId == other.UniqueEntityId;
+            return other != null && this._uid == other._uid;
         }
 
         public override bool Equals(object obj)
@@ -33,7 +33,7 @@ namespace Joy.Core
 
         public override int GetHashCode()
         {
-            return UniqueEntityId;
+            return _uid;
         }
 
         public static bool operator ==(Entity left, Entity right)

@@ -7,9 +7,9 @@ namespace Joy.Core
     // @TODO: Implement IEquatable<Filter> with filter value equality. Otherwise all filters will be different due to reference comparison.
     public class Filter
     {
-        private readonly HashSet<Type> _all = new HashSet<Type>();
-        private readonly HashSet<HashSet<Type>> _any = new HashSet<HashSet<Type>>();
-        private readonly HashSet<Type> _none = new HashSet<Type>();
+        private readonly HashSet<Type> _allOf = new HashSet<Type>();
+        private readonly HashSet<HashSet<Type>> _anyOfs = new HashSet<HashSet<Type>>();
+        private readonly HashSet<Type> _noneOf = new HashSet<Type>();
 
         public Filter()
         {
@@ -22,7 +22,7 @@ namespace Joy.Core
         /// </summary>
         public Filter AllOf(params Type[] componentTypes)
         {
-            _all.UnionWith(componentTypes);
+            _allOf.UnionWith(componentTypes);
             return this;
         }
 
@@ -37,7 +37,7 @@ namespace Joy.Core
              * we need a custom collection or a custom equality comparer.
              */
 
-            _any.Add(new HashSet<Type>(componentTypes));
+            _anyOfs.Add(new HashSet<Type>(componentTypes));
             return this;
         }
 
@@ -47,7 +47,7 @@ namespace Joy.Core
         /// </summary>
         public Filter NoneOf(params Type[] componentTypes)
         {
-            _none.UnionWith(componentTypes);
+            _noneOf.UnionWith(componentTypes);
             return this;
         }
 
@@ -63,11 +63,11 @@ namespace Joy.Core
         // Compatibility checks
         //
 
-        private bool AllCheck(Entity entity) => _all.All(entity.Has);
+        private bool AllCheck(Entity entity) => _allOf.All(entity.Has);
 
-        private bool AnyCheck(Entity entity) => _any.All(a => a.Any(entity.Has));
+        private bool AnyCheck(Entity entity) => _anyOfs.All(a => a.Any(entity.Has));
 
-        private bool NoneCheck(Entity entity) => !_none.Any(entity.Has);
+        private bool NoneCheck(Entity entity) => !_noneOf.Any(entity.Has);
 
 
 
@@ -82,11 +82,11 @@ namespace Joy.Core
                 _filter = filter;
             }
 
-            public Type[] All => _filter._all.ToArray();
+            public Type[] AllOf => _filter._allOf.ToArray();
 
-            public Type[][] Any => _filter._any.Select(x => x.ToArray()).ToArray();
+            public Type[][] AnyOfs => _filter._anyOfs.Select(x => x.ToArray()).ToArray();
 
-            public Type[] None => _filter._none.ToArray();
+            public Type[] NoneOf => _filter._noneOf.ToArray();
         }
     }
 }
