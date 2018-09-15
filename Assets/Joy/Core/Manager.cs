@@ -3,6 +3,11 @@ using UnityEngine;
 
 namespace Joy.Core
 {
+    // @TODO: Move cache/register scene entity methods to here.
+
+    // @TODO: Create a composition root base class with repetitive stuff handled?
+
+	// @TODO: Create a partial class on a seperate file with a .Debug extension for Debug nested class.
     public static class Manager
     {
         private static readonly Dictionary<Filter, Group> FiltersAndGroups = new Dictionary<Filter, Group>();

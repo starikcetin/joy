@@ -4,6 +4,8 @@ using System.Linq;
 
 namespace Joy.Core
 {
+	// @TODO: Create a partial class on a seperate file with a .Debug extension for Debug nested class.
+	
     // @TODO: Implement IEquatable<Filter> with filter value equality. Otherwise all filters will be different due to reference comparison.
     public class Filter
     {
