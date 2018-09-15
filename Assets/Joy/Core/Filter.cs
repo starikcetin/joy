@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace Joy.Core
 {
+    // @TODO: Implement IEquatable<Filter> with filter value equality. Otherwise all filters will be different due to reference comparison.
     public class Filter
     {
         private readonly HashSet<Type> _all = new HashSet<Type>();
