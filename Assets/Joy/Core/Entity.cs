@@ -54,5 +54,10 @@ namespace Joy.Core
         {
             return GetComponent(t) != null;
         }
+
+        public bool Has<T>() where T : Component
+        {
+            return GetComponent<T>() != null;
+        }
     }
 }
