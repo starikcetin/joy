@@ -17,6 +17,7 @@ namespace Joy.Core
 
         public static void RegisterSystem(ISystem system)
         {
+            // @BUG POTENTIAL: Make sure the system doesn't get duplicated.
             Systems.Add(system);
             RegisterFilters(system.Filters);
         }
