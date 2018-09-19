@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Joy.Core
@@ -97,9 +98,13 @@ namespace Joy.Core
             }
         }
 
-        public static IReadOnlyCollection<Entity> Query(Filter fooFilter)
+        public static Entity[] Query(Filter fooFilter)
         {
-            return FiltersAndGroups[fooFilter].Members;
+            /*
+             * TODO PERFORMANCE: Optimize so we don't call ToArray() every frame
+             * options: take in a fill array or make a double buffer system.
+             */
+            return FiltersAndGroups[fooFilter].Members.ToArray();
         }
 
 
