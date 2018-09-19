@@ -34,7 +34,7 @@ namespace Joy.Core
         {
             if (entity == null) return;
 
-            Object.Destroy(entity.gameObject);
+            Object.DestroyImmediate(entity.gameObject, false);
             Manager.EntityDestroyed(entity);
         }
 
@@ -54,7 +54,7 @@ namespace Joy.Core
             T[] components = entity.GetComponents<T>();
             foreach (var c in components)
             {
-                Object.Destroy(c);
+                Object.DestroyImmediate(c, false);
             }
 
             Manager.ComponentRemoved<T>(entity);
