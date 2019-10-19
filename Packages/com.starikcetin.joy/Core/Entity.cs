@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Joy.Core
+namespace starikcetin.Joy.Core
 {
     /// <summary>
     /// This will be attached to a GameObject to make it an Entity for Joy framework.

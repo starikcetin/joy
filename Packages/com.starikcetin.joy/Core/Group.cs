@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Joy.Core
+namespace starikcetin.Joy.Core
 {
     public class Group
     {

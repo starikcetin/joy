@@ -1,0 +1,7 @@
+{
+  "name": "com.starikcetin.joy",
+  "displayName": "Joy",
+  "version": "0.0.2",
+  "description": "ECS framework for Unity3D game engine that uses MonoBehaviours as components and GameObjects as entities.",
+  "type": "library"
+}

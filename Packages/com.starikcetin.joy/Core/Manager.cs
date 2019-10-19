@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Joy.Core
+namespace starikcetin.Joy.Core
 {
     // @TODO: Move cache/register scene entity methods to here.
 
