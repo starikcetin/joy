@@ -1,7 +1,9 @@
 {
-	"name": "com.starikcetin.joy",
-	"displayName": "Joy",
-	"version": "0.0.1",
-	"description": "ECS framework for Unity3D game engine that uses MonoBehaviours as components and GameObjects as entities.",
-	"dependencies": {}
+  "author": "starikcetin <cetinsamedtarik@gmail.com> (https://github.com/starikcetin)",
+  "name": "com.starikcetin.joy",
+  "displayName": "Joy",
+  "version": "0.1.0",
+  "description": "ECS framework for Unity3D game engine that uses MonoBehaviours as components and GameObjects as entities.",
+  "type": "library",
+  "license": "MIT"
 }

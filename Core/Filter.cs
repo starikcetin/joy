@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Joy.Core
+namespace starikcetin.Joy.Core
 {
 	// @TODO: Create a partial class on a seperate file with a .Debug extension for Debug nested class.
 	

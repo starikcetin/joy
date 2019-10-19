@@ -1,4 +1,4 @@
-namespace Joy.Core
+namespace starikcetin.Joy.Core
 {
     public interface ISystem
     {

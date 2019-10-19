@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Joy.Core
+namespace starikcetin.Joy.Core
 {
     public static class EntityOperations
     {

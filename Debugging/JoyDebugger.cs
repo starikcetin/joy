@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Joy.Core;
+using starikcetin.Joy.Core;
 using UnityEngine;
 
-namespace Joy.Debugging
+namespace starikcetin.Joy.Debugging
 {
     public class JoyDebugger : MonoBehaviour
     {

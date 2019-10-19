@@ -1,7 +1,7 @@
-using Joy.Core;
+using starikcetin.Joy.Core;
 using UnityEngine;
 
-namespace Joy.Example
+namespace starikcetin.Joy.Example
 {
     public class ExampleCompositionRoot : MonoBehaviour
     {
