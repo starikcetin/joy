@@ -5,7 +5,6 @@ ECS framework for Unity3D game engine that uses MonoBehaviours as components and
 * Filter tests: [/Assets/FiltersTest](/Assets/FiltersTest)
 * Roll a Ball example: [/Assets/RollABall](/Assets/RollABall)
 
-You only need the [/Assets/Joy](/Assets/Joy) folder to use the framework.
 
 Installation (with UPM and UpmGitExtension, recommended)
 ---
